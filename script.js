@@ -38,16 +38,22 @@ function numberofbox(event) {
 }
 
 const clear = document.getElementById("clear");
-clear.addEventListener("click", () =>resetColors());
+clear.addEventListener("click", () =>resetColours());
 
 
     
-function resetColors() {
+function resetColours() {
   const boxes = document.getElementsByClassName("box");
 
   for (let i = 0; i < boxes.length; i++) {
      boxes[i].style.backgroundColor = "black";
   }
 }
+
+document.addEventListener("keydown", (e) => {
+    if (e.key === 'g') numberofbox();
+    if (e.key === 'r') resetColours();
+
+});
 
 createGrid();
