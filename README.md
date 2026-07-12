@@ -1,4 +1,4 @@
-Pixel Sketch
+Pixel Sketch:
 A website that allows users to sketch within a grid.
 
 Instructions for use:
