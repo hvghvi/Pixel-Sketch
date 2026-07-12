@@ -28,7 +28,10 @@ const user = document.getElementById("user");
 user.addEventListener("click", (event) => numberofbox());
 
 function numberofbox(event) {
-    let newBoxes = Number(window.prompt("number of squares per side?"));
+    let newBoxes = Number(window.prompt("number of squares per side? (1-100)"));
+    while (newBoxes <= 0 || newBoxes > 100){
+      newBoxes = Number(window.prompt("number of squares per side? (1-100)"));
+    }
 
     while (container.firstChild != null) {
         container.removeChild(container.firstChild);
@@ -55,5 +58,6 @@ document.addEventListener("keydown", (e) => {
     if (e.key === 'r') resetColours();
 
 });
+
 
 createGrid();
