@@ -1,23 +1,25 @@
 const container = document.querySelector(".container");
 
+function createGrid(sidelength=16) {
+  for (let i = 0; i< sidelength*sidelength; i++){
+      const box = document.createElement("div");
+      box.classList.add("box");
+      container.appendChild(box);
+      box.style.width = (100 / sidelength) + "%";
+      box.style.height = (100 / sidelength) + "%";
 
-for (let i = 0; i< 256; i++){
-    const box = document.createElement("div");
-    box.classList.add("box");
-    container.appendChild(box);
-}
+  }
+  const boxes= document.getElementsByClassName("box");
 
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].addEventListener("click", () => {
+      boxes[i].style.backgroundColor = "white";
+    });
 
-const boxes= document.getElementsByClassName("box");
-
-for (let i = 0; i < boxes.length; i++) {
-  boxes[i].addEventListener("mouseover", () => {
-    boxes[i].style.backgroundColor = "lightblue";
-  });
-
-  boxes[i].addEventListener("mouseout", () => {
-    boxes[i].style.backgroundColor = "blue";
-  });
+    boxes[i].addEventListener("click", () => {
+      boxes[i].style.backgroundColor = "white";
+    });
+  }
 }
 
 
@@ -26,9 +28,26 @@ const user = document.getElementById("user");
 user.addEventListener("click", (event) => numberofbox());
 
 function numberofbox(event) {
-    let boxes = Number(window.prompt("number of squares per side?"));
+    let newBoxes = Number(window.prompt("number of squares per side?"));
 
     while (container.firstChild != null) {
-      container.removeChild(container.firstChild);
-    }
+        container.removeChild(container.firstChild);
+      }
+
+    createGrid(newBoxes);
 }
+
+const clear = document.getElementById("clear");
+clear.addEventListener("click", () =>resetColors());
+
+
+    
+function resetColors() {
+  const boxes = document.getElementsByClassName("box");
+
+  for (let i = 0; i < boxes.length; i++) {
+     boxes[i].style.backgroundColor = "black";
+  }
+}
+
+createGrid();
