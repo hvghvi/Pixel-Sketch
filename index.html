@@ -16,10 +16,18 @@
                     <button id="clear">clear grid</button>
                 </div>
                 <p>Shortcuts:</p>
-                <p>g to create a new grid, r to reset grid</p>
+                <p>g new grid, r reset grid, e eraser, c colour, d drag mode</p>
             </div>
-            <div class="container"> 
-                <div class="boxes"></div>
+            <div class="grid-wrap">
+                <div class="container">
+                    <div class="boxes"></div>
+                </div>
+                <div class="grid-controls">
+                    <button id="eraser">eraser</button>
+                    <button id="colour-btn">change colour</button>
+                    <input type="color" id="colour-picker" value="#ffffff">
+                    <button id="drag">drag: off</button>
+                </div>
             </div>
         </div>
     </main>

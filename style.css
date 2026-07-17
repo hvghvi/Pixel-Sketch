@@ -24,9 +24,8 @@ main{
 .middle {
     display: flex;
     justify-content: center;
-    margin: 40px;
-    align-items: center;
     margin: 60px;
+    align-items: center;
     gap: 200px;
     font-family: nevis;
 }
@@ -35,15 +34,29 @@ main{
     display: flex;
     flex-direction: column;
     align-self: center;
-    
+
+}
+
+.grid-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .buttons {
     margin-bottom: 10px;
 }
 
+.grid-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
 
-#user, #clear {
+
+#user, #clear, #eraser, #colour-btn, #drag {
     font-family: nevis;
     font-size: 16px;
     letter-spacing: 2px;
@@ -59,12 +72,38 @@ main{
     -webkit-user-select: none;
     touch-action: manipulation;
     margin-right: 10px;
+    background-color: #fff;
 }
 
 .buttons:active {
     box-shadow: 0px 0px 0px 0px;
     top: 5px;
     left: 5px;
+}
+
+#eraser:active, #colour-btn:active, #drag:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+#eraser.active, #drag.active {
+    background-color: #000;
+    color: #fff;
+}
+
+#drag {
+    width: 140px;
+    text-align: center;
+}
+
+#colour-picker {
+    width: 42px;
+    height: 42px;
+    border: 3px solid #000;
+    padding: 0;
+    cursor: pointer;
+    background: none;
 }
 
 .menu-left p {
