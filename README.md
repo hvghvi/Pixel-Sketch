@@ -1,6 +1,6 @@
 # Pixel Sketch
 
-A browser-based sketchpad built on a resizable pixel grid. Click, drag, or erase your way to a pixel-art drawing — no libraries, just vanilla HTML, CSS, and JavaScript.
+A browser-based sketchpad built on a resizable pixel grid. Click, drag, or erase your way to a pixel-art drawing. No libraries, just vanilla HTML, CSS, and JavaScript.
 
 ## Features
 
